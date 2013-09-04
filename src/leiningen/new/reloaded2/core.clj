@@ -1,11 +1,11 @@
 (ns com.example.core
   (:gen-class)
-  (:require (com.example application)))
+  (:require (com.example [components :refer [start]] 
+                         [application :refer [assemble-prod]])))
 
 (defn -main 
   []
   "Start the application"
-  (-> (com.example.application/create {:listening-port 8000 :blocking true})
-      com.example.application/start))
+  (-> (assemble-prod {:listening-port 8000 :blocking false :repl-port 8001}) start))
 
 

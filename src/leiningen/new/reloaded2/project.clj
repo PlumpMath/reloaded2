@@ -4,11 +4,14 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
+                 [org.clojure/tools.nrepl "0.2.3"]
                  [liberator "0.9.0"]
                  [compojure "1.1.3"]
+                 [environ "0.4.0"]
                  [ring/ring-jetty-adapter "1.1.0"]]
   :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.4"]
-                                  [org.clojure/clojure-contrib "1.2.0"]]
-                   :source-paths ["dev"]}
+                                  [ring-mock "0.1.5"]]
+                   :source-paths ["dev"]
+                   :env {:appenv "development"}}
              :uberjar {:aot :all}}
   :main com.example.core)
