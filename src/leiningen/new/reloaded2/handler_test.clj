@@ -3,12 +3,12 @@
             [clojure.test :refer :all]
             [ring.mock.request :refer :all]))
 
-(deftest handler-right
+(deftest request-ok
   (testing "get /bar returns succesfully"
     (is (= (select-keys (app (request :get "/bar")) [:status]) 
         {:status 200}))))
 
-(deftest handler-wrong
+(deftest request-not-ok
   (testing "get /foo doesn't return succesfully"
     (is (not= (select-keys (app (request :get "/foo")) [:status]) 
         {:status 200}))))

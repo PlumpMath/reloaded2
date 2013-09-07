@@ -23,7 +23,7 @@
   "Creates and initializes the system under development in the Var
   #'system."
   []
-  (alter-var-root #'system (constantly (assemble-dev {:listening-port 3000 :blocking false :debug true}))))
+  (alter-var-root #'system (constantly (assemble-dev :listening-port 3000 :debug true))))
 
 (defn start
   "Starts the system running, updates the Var #'system."

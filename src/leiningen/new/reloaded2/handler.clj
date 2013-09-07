@@ -10,11 +10,6 @@
                            :handle-ok (format "<html>It's %d milliseconds since the end of the current epoch."
                                               (System/currentTimeMillis)))))
 
-;; (def app
-;;   (if (= (env :appenv) "development")
-;;     (-> routes (wrap-trace :header :ui))
-;;     routes))
-
 (def app-with-debugging
   (-> app 
       (wrap-trace :header :ui)))

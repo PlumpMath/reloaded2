@@ -12,7 +12,7 @@
   []
   "Start the application"
   (alter-var-root #'system (constantly (-> 
-                                        (assemble-prod {:listening-port 8000 :blocking false :repl-port 8001}) 
-                                        start))))
+                                        (assemble-prod :listening-port 8000 :repl-port 8001) 
+                                        start)))) 
 
 
