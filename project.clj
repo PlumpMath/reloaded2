@@ -1,4 +1,4 @@
-(defproject reloaded2/lein-template "0.1.3"
+(defproject reloaded2/lein-template "0.1.4"
   :description "Created with lein-create-template"
   :url "https://github.com/danielsz/reloaded2"
   :license {:name "Eclipse Public License"
