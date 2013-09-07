@@ -1,4 +1,4 @@
-(ns com.example.lifecycle)
+(ns reloaded2.lifecycle)
 
 (defprotocol Lifecycle
   (start [component]

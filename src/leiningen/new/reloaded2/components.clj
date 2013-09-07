@@ -1,16 +1,17 @@
-(ns com.example.components
-  (:require (com.example [lifecycle :as lifecycle])))
+(ns reloaded2.components
+  (:require (reloaded2 [lifecycle :as lifecycle])))
 
 (defn add [components]
-  "Add a component to a vector of components"
+  "Add a component to a collection of components"
   (partial conj components))
 
 (defn start
-  "Runs all the stopped components. Returns a vector with the components in a started state"
+  "Runs all the stopped components. Returns a collection with the components in a started state"
   [components]
-  (doall (map lifecycle/start components)))
+  (vec (doall (map lifecycle/start components))))
 
 (defn stop
-  "Stops all running components. Returns a vector with the components in a stopped state"
+  "Stops all running components. Returns a collection with the components in a stopped state"
   [components]
-  (doall (map lifecycle/stop components)))
+  (dorun (map lifecycle/stop components))
+  components)

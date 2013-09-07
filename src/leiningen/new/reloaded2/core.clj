@@ -1,11 +1,18 @@
-(ns com.example.core
+(ns reloaded2.core
   (:gen-class)
-  (:require (com.example [components :refer [start]] 
-                         [application :refer [assemble-prod]])))
+  (:require (reloaded2 [components :refer [start]] 
+                       [application :refer [assemble-prod]])))
+
+(def system
+  "A Var containing an object representing the application under
+  production."
+  nil)
 
 (defn -main 
   []
   "Start the application"
-  (-> (assemble-prod {:listening-port 8000 :blocking false :repl-port 8001}) start))
+  (alter-var-root #'system (constantly (-> 
+                                        (assemble-prod {:listening-port 8000 :blocking false :repl-port 8001}) 
+                                        start))))
 
 

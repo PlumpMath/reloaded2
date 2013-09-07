@@ -1,4 +1,4 @@
-(defproject com.example/{{ns-name}} "0.1.0-SNAPSHOT"
+(defproject reloaded2/{{ns-name}} "0.1.0-SNAPSHOT"
   :description "TODO"
   :url "TODO"
   :license {:name "Eclipse Public License"
@@ -14,4 +14,4 @@
                    :source-paths ["dev"]
                    :env {:appenv "development"}}
              :uberjar {:aot :all}}
-  :main com.example.core)
+  :main reloaded2.core)

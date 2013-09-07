@@ -1,4 +1,4 @@
-(ns com.example.utilities
+(ns reloaded2.utilities
   (:require [environ.core :refer [env]]))
 
 ;;(defmacro with-env-dev)
