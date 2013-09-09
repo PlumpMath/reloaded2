@@ -9,6 +9,7 @@
                  [compojure "1.1.3"]
                  [environ "0.4.0"]
                  [ring/ring-jetty-adapter "1.1.0"]]
+  :plugins [[lein-environ "0.4.0"]]
   :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.4"]
                                   [ring-mock "0.1.5"]]
                    :source-paths ["dev"]

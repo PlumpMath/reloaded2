@@ -5,7 +5,7 @@
 (defrecord ReplServer [port instance]
   Lifecycle
   (start [_]
-    (reset! instance (start-server :port port)))
+    (if port (reset! instance (start-server :port port))))
   (stop [_]
     (when @instance
       (.stop @instance)
