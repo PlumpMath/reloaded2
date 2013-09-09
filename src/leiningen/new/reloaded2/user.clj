@@ -12,7 +12,7 @@
    [clojure.test :as test]
    [clojure.tools.namespace.repl :refer (refresh refresh-all)]
    [reloaded2.application :refer [assemble-dev]]
-   [reloaded2.components]))
+   [reloaded2.lifecycle :refer [start-all stop-all]]))
 
 (def system
   "A Var containing an object representing the application under
@@ -23,19 +23,18 @@
   "Creates and initializes the system under development in the Var
   #'system."
   []
-  (alter-var-root #'system (constantly (assemble-dev :listening-port 3000 :debug true))))
+  (alter-var-root #'system (constantly (assemble-dev))))
 
 (defn start
-  "Starts the system running, updates the Var #'system."
+  "Starts all components, updates the Var #'system."
   []
-  (alter-var-root #'system reloaded2.components/start)
+  (alter-var-root #'system start-all)
   :started)
 
 (defn stop
-  "Stops the system if it is currently running, updates the Var
-  #'system."
+  "Stops all components, updates the Var #'system."
   []
-  (alter-var-root #'system reloaded2.components/stop)
+  (alter-var-root #'system stop-all)
   :stopped)
 
 (defn go

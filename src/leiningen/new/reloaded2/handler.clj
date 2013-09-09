@@ -1,8 +1,7 @@
 (ns reloaded2.handler 
   (:require [liberator.core :refer [resource defresource]]
             [liberator.dev :refer [wrap-trace]]
-            [compojure.core :refer [defroutes GET]]
-            [environ.core :refer [env]]))
+            [compojure.core :refer [defroutes GET]]))
 
 
 (defroutes app

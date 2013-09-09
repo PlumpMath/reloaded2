@@ -1,25 +1,25 @@
 (ns reloaded2.application
-  (:require (reloaded2 [components :refer [add]]
-                       web-server
-                       repl-server)))
+  (:require (reloaded2 [lifecycle :refer [add]]
+                       [web-server :refer [->WebServer]]
+                       [repl-server :refer [->ReplServer]])
+            [environ.core :refer [env]]))
 
 
 (defn assemble-base
   "Assembles and returns components for a base application"
-  [{:keys [listening-port blocking debug] :or {blocking false}}]
-  (let [components [(reloaded2.web-server/->WebServer listening-port blocking debug)]]
-    components))
+  []
+  ((add {}) {:web-server (->WebServer (env :http-port) (env :trace-headers) (atom nil))}))
 
 (defn assemble-dev 
   "Alias for assemble-base"
-  [& params]
-  (assemble-base params))
+  []
+  (assemble-base))
 
 (defn assemble-prod
   "Assembles and returns components for a production application"
-  [& {:keys [repl-port] :as params}]
-  (let [components (assemble-base params)]
+  []
+  (let [components (assemble-base)]
     ((add components) 
-     (reloaded2.repl-server/->ReplServer repl-port))))
+     {:repl-server (->ReplServer (env :repl-port) (atom nil))})))
 
 

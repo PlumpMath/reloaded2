@@ -2,13 +2,14 @@
   (:require (reloaded2 [lifecycle :refer [Lifecycle]])
             [clojure.tools.nrepl.server :refer [start-server stop-server]]))
 
-(defrecord ReplServer [port]
+(defrecord ReplServer [port instance]
   Lifecycle
-  (start [{:keys [port] :as component}]
-    (assoc component :server (start-server :port port)))
-  (stop [{:keys [server] :as component}]
-    (stop-server server)
-    component))
+  (start [_]
+    (reset! instance (start-server :port port)))
+  (stop [_]
+    (when @instance
+      (.stop @instance)
+      (reset! instance nil))))
 
 
 

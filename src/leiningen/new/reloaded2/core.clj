@@ -1,6 +1,6 @@
 (ns reloaded2.core
   (:gen-class)
-  (:require (reloaded2 [components :refer [start]] 
+  (:require (reloaded2 [lifecycle :refer [start-all]] 
                        [application :refer [assemble-prod]])))
 
 (def system
@@ -12,7 +12,7 @@
   []
   "Start the application"
   (alter-var-root #'system (constantly (-> 
-                                        (assemble-prod :listening-port 8000 :repl-port 8001) 
-                                        start)))) 
+                                        (assemble-prod) 
+                                        start-all)))) 
 
 

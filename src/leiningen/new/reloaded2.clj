@@ -10,7 +10,6 @@
               :sanitized (name-to-path name)}]
     (->files data ["src/reloaded2/remote/monitor.clj" (render "monitor.clj" data)]
 ["src/reloaded2/application.clj" (render "application.clj" data)]
-["src/reloaded2/components.clj" (render "components.clj" data)]
 ["src/reloaded2/remote/commands.clj" (render "commands.clj" data)]
 ["src/reloaded2/repl_server.clj" (render "repl_server.clj" data)]
 ["project.clj" (render "project.clj" data)]
