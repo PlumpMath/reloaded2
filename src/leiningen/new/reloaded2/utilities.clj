@@ -1,7 +1,10 @@
-(ns reloaded2.utilities
-  (:require [environ.core :refer [env]]))
+(ns reloaded2.utilities)
 
-;;(defmacro with-env-dev)
+(defmacro stringify-form [form & variables]
+  (if variables
+    `(format (str ~form) (str ~@variables))
+    `(str ~form)))
 
-;;(defmacro with-env-prod)
+
+
 

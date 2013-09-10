@@ -1,7 +1,8 @@
 (ns reloaded2.remote.commands
-  (:require (reloaded2.remote [monitor :refer [send-command]])))
+  (:require (reloaded2.remote [monitor :refer [send-command]])
+            (reloaded2 [utilities :refer [stringify-form]])))
 
-(def debugging-command  
+(def debugging-cmd  
   '(let [component (:web-server reloaded2.core/system)]
      (reloaded2.lifecycle/stop component)
      (->>
@@ -12,18 +13,14 @@
       (alter-var-root #'reloaded2.core/system))
      (reloaded2.lifecycle/start (:web-server reloaded2.core/system))))
 
-(defmacro stringify-cmd [command & variables]
-  (if variables
-    `(format (str ~command) (str ~@variables))
-    `(str ~command)))
-
 (defn toggle-debugging
   "Restart web server with debugging off"
   [& {:keys [toggle]}]
-  (let [commands [(stringify-cmd debugging-command toggle)]]
+  (let [commands [(stringify-form debugging-cmd toggle)]]
     (send-command commands)))
 
-;;(toggle-debugging :toggle true)
+;;(toggle-debugging :toggle false)
+
 
 
 
