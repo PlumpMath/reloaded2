@@ -1,5 +1,5 @@
-(ns reloaded2.handler-test
-  (:require [reloaded2.handler :refer :all]
+(ns {{ns-name}}.handler-test
+  (:require [{{ns-name}}.handler :refer :all]
             [clojure.test :refer :all]
             [ring.mock.request :refer :all]))
 

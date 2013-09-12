@@ -1,6 +1,6 @@
-(ns reloaded2.core
+(ns {{ns-name}}.core
   (:gen-class)
-  (:require (reloaded2 [lifecycle :refer [start-all]] 
+  (:require ({{ns-name}} [lifecycle :refer [start-all]] 
                        [application :refer [assemble-prod]])))
 
 (def system

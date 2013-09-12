@@ -1,4 +1,4 @@
-(ns reloaded2.lifecycle)
+(ns {{ns-name}}.lifecycle)
 
 (defprotocol Lifecycle
   (start [component]

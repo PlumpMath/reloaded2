@@ -11,8 +11,8 @@
    [clojure.string :as str]
    [clojure.test :as test]
    [clojure.tools.namespace.repl :refer (refresh refresh-all)]
-   [reloaded2.application :refer [assemble-dev]]
-   [reloaded2.lifecycle :refer [start-all stop-all]]))
+   [{{ns-name}}.application :refer [assemble-dev]]
+   [{{ns-name}}.lifecycle :refer [start-all stop-all]]))
 
 (def system
   "A Var containing an object representing the application under

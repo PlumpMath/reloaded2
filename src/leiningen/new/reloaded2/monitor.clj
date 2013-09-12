@@ -1,4 +1,4 @@
-(ns reloaded2.remote.monitor
+(ns {{ns-name}}.remote.monitor
   (:require [clojure.tools.nrepl :as repl]
             [clojure.pprint :refer (pprint)]))
 

@@ -16,4 +16,4 @@
                    :env {:http-port 3000 :trace-headers true}}
              :production {:env {:http-port 8000 :repl-port 8001 :trace-headers false}}
              :uberjar {:aot :all}}
-  :main reloaded2.core)
+  :main {{ns-name}}.core)

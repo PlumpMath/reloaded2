@@ -1,17 +1,17 @@
-(ns reloaded2.remote.commands
-  (:require (reloaded2.remote [monitor :refer [send-command]])
-            (reloaded2 [utilities :refer [stringify-form]])))
+(ns {{ns-name}}.remote.commands
+  (:require ({{ns-name}}.remote [monitor :refer [send-command]])
+            ({{ns-name}} [utilities :refer [stringify-form]])))
 
 (def debugging-cmd  
-  '(let [component (:web-server reloaded2.core/system)]
-     (reloaded2.lifecycle/stop component)
+  '(let [component (:web-server {{ns-name}}.core/system)]
+     ({{ns-name}}.lifecycle/stop component)
      (->>
       %s
       (assoc component :debug)
-      (assoc reloaded2.core/system :web-server)
+      (assoc {{ns-name}}.core/system :web-server)
       (constantly)
-      (alter-var-root #'reloaded2.core/system))
-     (reloaded2.lifecycle/start (:web-server reloaded2.core/system))))
+      (alter-var-root #'{{ns-name}}.core/system))
+     ({{ns-name}}.lifecycle/start (:web-server {{ns-name}}.core/system))))
 
 (defn toggle-debugging
   "Restart web server with debugging off"

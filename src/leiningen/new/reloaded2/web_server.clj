@@ -1,5 +1,5 @@
-(ns reloaded2.web-server
-  (:require (reloaded2 [lifecycle :refer [Lifecycle]]
+(ns {{ns-name}}.web-server
+  (:require ({{ns-name}} [lifecycle :refer [Lifecycle]]
                        [handler :refer [app app-with-debugging]])
             [ring.adapter.jetty :refer [run-jetty]]))
 

@@ -1,4 +1,4 @@
-(ns reloaded2.handler 
+(ns {{ns-name}}.handler 
   (:require [liberator.core :refer [resource defresource]]
             [liberator.dev :refer [wrap-trace]]
             [compojure.core :refer [defroutes GET]]))

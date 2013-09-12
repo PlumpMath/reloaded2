@@ -1,5 +1,5 @@
-(ns reloaded2.repl-server
-  (:require (reloaded2 [lifecycle :refer [Lifecycle]])
+(ns {{ns-name}}.repl-server
+  (:require ({{ns-name}} [lifecycle :refer [Lifecycle]])
             [clojure.tools.nrepl.server :refer [start-server stop-server]]))
 
 (defrecord ReplServer [port instance]

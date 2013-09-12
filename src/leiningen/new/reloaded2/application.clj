@@ -1,5 +1,5 @@
-(ns reloaded2.application
-  (:require (reloaded2 [lifecycle :refer [add]]
+(ns {{ns-name}}.application
+  (:require ({{ns-name}} [lifecycle :refer [add]]
                        [web-server :refer [->WebServer]]
                        [repl-server :refer [->ReplServer]])
             [environ.core :refer [env]]))

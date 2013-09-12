@@ -1,4 +1,4 @@
-(ns reloaded2.utilities)
+(ns {{ns-name}}.utilities)
 
 (defmacro stringify-form [form & variables]
   (if variables
