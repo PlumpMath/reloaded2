@@ -4,10 +4,9 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.clojure/tools.nrepl "0.2.3"]
-                 [liberator "0.9.0"]
-                 [ring/ring-jetty-adapter "1.2.0"]
-                 [compojure "1.1.5"]
+                 [liberator "0.10.0"]
+                 [ring "1.2.1"]
+                 [compojure "1.1.6"]
                  [environ "0.4.0"]]
   :plugins [[lein-environ "0.4.0"]]
   :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.4"]
