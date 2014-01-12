@@ -1,13 +1,19 @@
-(ns {{ns-name}}.handler 
-  (:require [liberator.core :refer [resource defresource]]
-            [liberator.dev :refer [wrap-trace]]
-            [compojure.core :refer [defroutes GET]]))
+(ns {{ns-name}}.webapp.handler 
+  (:require 
+   ({{ns-name}}.webapp [resources :refer [bar]])
+   [liberator.dev :refer [wrap-trace]]
+   [compojure.core :refer [defroutes GET]]
+   [ring.middleware.resource :refer [wrap-resource]]   
+   [ring.middleware.file-info :refer [wrap-file-info]]))
 
 
-(defroutes app
-  (GET "/bar" [] (resource :available-media-types ["text/html"]
-                           :handle-ok (format "<html>It's %d milliseconds since the end of the current epoch."
-                                              (System/currentTimeMillis)))))
+(defroutes routes
+  (GET "/bar" [] bar))
+
+(def app
+  (-> routes 
+      (wrap-resource "public")
+      (wrap-file-info)))
 
 (def app-with-debugging
   (-> app 

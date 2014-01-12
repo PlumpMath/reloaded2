@@ -1,4 +1,4 @@
-(ns {{ns-name}}.lifecycle)
+(ns {{ns-name}}.wiring.lifecycle)
 
 (defprotocol Lifecycle
   (start [component]

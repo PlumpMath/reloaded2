@@ -1,5 +1,5 @@
-(ns {{ns-name}}.repl-server
-  (:require ({{ns-name}} [lifecycle :refer [Lifecycle]])
+(ns {{ns-name}}.wiring.components.repl-server
+  (:require ({{ns-name}}.wiring [lifecycle :refer [Lifecycle]])
             [clojure.tools.nrepl.server :refer [start-server stop-server]]))
 
 (defrecord ReplServer [port instance]

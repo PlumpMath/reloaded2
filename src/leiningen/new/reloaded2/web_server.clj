@@ -1,6 +1,6 @@
-(ns {{ns-name}}.web-server
-  (:require ({{ns-name}} [lifecycle :refer [Lifecycle]]
-                       [handler :refer [app app-with-debugging]])
+(ns {{ns-name}}.wiring.components.web-server
+  (:require ({{ns-name}}.wiring [lifecycle :refer [Lifecycle]])
+            ({{ns-name}}.webapp [handler :refer [app app-with-debugging]])
             [ring.adapter.jetty :refer [run-jetty]]))
 
 (defrecord WebServer [listening-port debug instance]

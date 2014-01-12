@@ -1,7 +1,8 @@
-(ns {{ns-name}}.application
-  (:require ({{ns-name}} [lifecycle :refer [add]]
-                       [web-server :refer [->WebServer]]
-                       [repl-server :refer [->ReplServer]])
+(ns {{ns-name}}.wiring.application
+  (:require ({{ns-name}}.wiring [lifecycle :refer [add]])
+            ({{ns-name}}.wiring.components 
+             [web-server :refer [->WebServer]]
+             [repl-server :refer [->ReplServer]])
             [environ.core :refer [env]]))
 
 
