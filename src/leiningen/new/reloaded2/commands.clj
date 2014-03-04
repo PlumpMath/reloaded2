@@ -1,6 +1,6 @@
 (ns {{ns-name}}.remote.commands
   (:require ({{ns-name}}.remote [monitor :refer [send-command]])
-            ({{ns-name}} [utilities :refer [stringify-form]])))
+            ({{ns-name}}.wiring [utilities :refer [stringify-form]])))
 
 (def debugging-cmd  
   '(let [component (:web-server {{ns-name}}.core/system)]

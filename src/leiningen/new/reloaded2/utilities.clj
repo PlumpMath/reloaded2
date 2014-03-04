@@ -1,4 +1,4 @@
-(ns {{ns-name}}.utilities)
+(ns {{ns-name}}.wiring.utilities)
 
 (defmacro stringify-form [form & variables]
   (if variables
