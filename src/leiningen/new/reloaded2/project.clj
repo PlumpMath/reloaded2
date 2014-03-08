@@ -4,7 +4,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [liberator "0.10.0"]
+                 [liberator "0.11.0"]
                  [ring "1.2.1"]
                  [compojure "1.1.6"]
                  [environ "0.4.0"]]
