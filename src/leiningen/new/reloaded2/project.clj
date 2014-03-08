@@ -9,8 +9,7 @@
                  [compojure "1.1.6"]
                  [environ "0.4.0"]]
   :plugins [[lein-environ "0.4.0"]]
-  :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.4"]
-                                  [ring-mock "0.1.5"]]
+  :profiles {:dev {:dependencies [[ring-mock "0.1.5"]]
                    :source-paths ["dev"]
                    :env {:http-port 3000 :trace-headers true}}
              :production {:env {:http-port 8000 :repl-port 8001 :trace-headers false}}
