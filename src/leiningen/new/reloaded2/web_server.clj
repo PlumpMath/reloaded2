@@ -7,7 +7,7 @@
   Lifecycle
   (start [_]
     (let [handler (if debug #'app-with-debugging #'app)]
-      (reset! instance (run-jetty handler {:port listening-port :join? false}))))
+      (reset! instance (run-jetty handler {:port (Integer. listening-port) :join? false}))))
   (stop [_]
     (when @instance
       (.stop @instance)
